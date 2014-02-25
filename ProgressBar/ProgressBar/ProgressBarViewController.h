@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ProgressBarViewController : UIViewController
+@property (nonatomic, assign) float mTargetPercentage;
 
+- (IBAction)onStartPressed:(id)sender;
+- (IBAction)onStopPressed:(id)sender;
+- (IBAction)onResetPressed:(id)sender;
+- (IBAction)onChunkDownPressed:(id)sender;
+- (IBAction)onChunkUpPressed:(id)sender;
 @end

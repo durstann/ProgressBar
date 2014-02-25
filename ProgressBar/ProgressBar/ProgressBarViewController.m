@@ -27,4 +27,29 @@
     return self;
 }
 
+- (IBAction)onStartPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onStopPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onResetPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onChunkDownPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onChunkUpPressed:(id)sender
+{
+    
+}
+
 @end
