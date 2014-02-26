@@ -64,12 +64,13 @@
 - (void)updateProgressBarToPercentage:(float)targetPercentage
 {
     float offset =  self.mProgressBarFillView.frame.size.width * (1.0f - targetPercentage);
-    float duration = 10.0f * self.currentPercentage;
+    float duration = 10.0f * fabsf(self.currentPercentage - targetPercentage);
     [UIView animateWithDuration:duration
                           delay:0.0f
                         options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear
                      animations:^{
-                              self.mProgressBarFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
+                            self.mProgressBarFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
+                            self.mProgressBarFillBackgroundView.transform = CGAffineTransformMakeTranslation(-offset, 0);
                           }
                      completion:^(BOOL completion){
                          //nothing to do here

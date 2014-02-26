@@ -10,6 +10,7 @@
 
 @interface ProgressBarViewController : UIViewController
 @property (nonatomic, retain) IBOutlet UIView* mProgressBarFillView;
+@property (nonatomic, retain) IBOutlet UIView* mProgressBarFillBackgroundView;
 
 - (IBAction)onStartPressed:(id)sender;
 - (IBAction)onStopPressed:(id)sender;
