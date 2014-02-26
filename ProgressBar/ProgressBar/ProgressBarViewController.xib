@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgressBarViewController">
             <connections>
+                <outlet property="mProgressBarFillView" destination="pc1-df-VJp" id="0eJ-MU-gzs"/>
                 <outlet property="view" destination="BfJ-hz-mNE" id="kx5-9X-R9w"/>
             </connections>
         </placeholder>

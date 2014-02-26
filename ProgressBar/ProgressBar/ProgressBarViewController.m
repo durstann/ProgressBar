@@ -29,17 +29,17 @@
 
 - (IBAction)onStartPressed:(id)sender
 {
-    
+    [self updateProgressBarToPercentage:0.0f];
 }
 
 - (IBAction)onStopPressed:(id)sender
 {
-    
+    [self updateProgressBarToPercentage:self.currentPercentage];
 }
 
 - (IBAction)onResetPressed:(id)sender
 {
-    
+    [self updateProgressBarToPercentage:1.0f];
 }
 
 - (IBAction)onChunkDownPressed:(id)sender
@@ -52,4 +52,27 @@
     
 }
 
+- (float)currentPercentage
+{
+    CALayer* presentationLayer = self.mProgressBarFillView.layer.presentationLayer;
+    CATransform3D presentationTransform = presentationLayer.transform;
+    float percentage = presentationTransform.m41 / self.mProgressBarFillView.frame.size.width;
+    
+    return 1.0f + percentage;
+}
+
+- (void)updateProgressBarToPercentage:(float)targetPercentage
+{
+    float offset =  self.mProgressBarFillView.frame.size.width * (1.0f - targetPercentage);
+    float duration = 10.0f * self.currentPercentage;
+    [UIView animateWithDuration:duration
+                          delay:0.0f
+                        options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear
+                     animations:^{
+                              self.mProgressBarFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
+                          }
+                     completion:^(BOOL completion){
+                         //nothing to do here
+                     }];
+}
 @end
