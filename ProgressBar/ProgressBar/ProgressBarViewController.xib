@@ -48,18 +48,8 @@
                                 <action selector="onResetPressed:" destination="-1" eventType="touchUpInside" id="6kd-Gv-tUV"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uSY-ZB-z7L">
-                            <rect key="frame" x="190" y="38" width="98" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                            <state key="normal" title="Chunk Up">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="onChunkUpPressed:" destination="-1" eventType="touchUpInside" id="rOU-9Q-7rC"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="utB-Rl-ylN">
-                            <rect key="frame" x="32" y="38" width="98" height="30"/>
+                            <rect key="frame" x="111" y="38" width="98" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             <state key="normal" title="Chunk Down">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

@@ -44,12 +44,9 @@
 
 - (IBAction)onChunkDownPressed:(id)sender
 {
+    float newPercentage = MAX(0.0f, self.currentPercentage - 0.1f);
     
-}
-
-- (IBAction)onChunkUpPressed:(id)sender
-{
-    
+    [self chunkProgressBarToPercentage:newPercentage];
 }
 
 - (float)currentPercentage
@@ -61,16 +58,33 @@
     return 1.0f + percentage;
 }
 
+- (void)chunkProgressBarToPercentage:(float)targetPercentage
+{
+    float offset =  self.mProgressBarFillView.frame.size.width * (1.0f - targetPercentage);
+    [self updateProgressBarToPercentage:self.currentPercentage];
+    self.mProgressBarFillBackgroundView.hidden = NO;
+    self.mProgressBarFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
+    [UIView animateWithDuration:0.7f
+                          delay:0.3f
+                        options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.mProgressBarFillBackgroundView.transform = CGAffineTransformMakeTranslation(-offset, 0);
+                     }
+                     completion:^(BOOL completion){
+                         //nothing to do here
+                     }];
+}
+
 - (void)updateProgressBarToPercentage:(float)targetPercentage
 {
     float offset =  self.mProgressBarFillView.frame.size.width * (1.0f - targetPercentage);
     float duration = 10.0f * fabsf(self.currentPercentage - targetPercentage);
+    self.mProgressBarFillBackgroundView.hidden = YES;
     [UIView animateWithDuration:duration
                           delay:0.0f
                         options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear
                      animations:^{
                             self.mProgressBarFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
-                            self.mProgressBarFillBackgroundView.transform = CGAffineTransformMakeTranslation(-offset, 0);
                           }
                      completion:^(BOOL completion){
                          //nothing to do here
