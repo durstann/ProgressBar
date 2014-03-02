@@ -21,6 +21,7 @@
 		93083053189ECB68007BAF43 /* ProgressBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93083052189ECB68007BAF43 /* ProgressBarTests.m */; };
 		9308305D189ECBBE007BAF43 /* ProgressBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9308305C189ECBBD007BAF43 /* ProgressBarViewController.xib */; };
 		93083062189ECD1A007BAF43 /* ProgressBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93083061189ECD1A007BAF43 /* ProgressBarViewController.m */; };
+		93787B0E18C3BE090071F5ED /* ButtonBase.png in Resources */ = {isa = PBXBuildFile; fileRef = 93787B0D18C3BE090071F5ED /* ButtonBase.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		9308305C189ECBBD007BAF43 /* ProgressBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressBarViewController.xib; sourceTree = "<group>"; };
 		9308305F189ECC06007BAF43 /* ProgressBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBarViewController.h; sourceTree = "<group>"; };
 		93083061189ECD1A007BAF43 /* ProgressBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBarViewController.m; sourceTree = "<group>"; };
+		93787B0D18C3BE090071F5ED /* ButtonBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonBase.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		93083033189ECB68007BAF43 /* ProgressBar */ = {
 			isa = PBXGroup;
 			children = (
+				93787B0D18C3BE090071F5ED /* ButtonBase.png */,
 				9308303C189ECB68007BAF43 /* ProgressBarAppDelegate.h */,
 				9308303D189ECB68007BAF43 /* ProgressBarAppDelegate.m */,
 				9308305F189ECC06007BAF43 /* ProgressBarViewController.h */,
@@ -228,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93787B0E18C3BE090071F5ED /* ButtonBase.png in Resources */,
 				93083038189ECB68007BAF43 /* InfoPlist.strings in Resources */,
 				93083040189ECB68007BAF43 /* Images.xcassets in Resources */,
 				9308305D189ECBBE007BAF43 /* ProgressBarViewController.xib in Resources */,
@@ -454,6 +458,7 @@
 				93083058189ECB68007BAF43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93083059189ECB68007BAF43 /* Build configuration list for PBXNativeTarget "ProgressBarTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +467,7 @@
 				9308305B189ECB68007BAF43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
