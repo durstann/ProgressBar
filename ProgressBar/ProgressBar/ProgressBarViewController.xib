@@ -10,6 +10,10 @@
                 <outlet property="mProgressBarFillBackgroundView" destination="pc1-df-VJp" id="AaE-zU-XdZ"/>
                 <outlet property="mProgressBarFillView" destination="ed4-d3-MPW" id="Zhu-5E-4Jn"/>
                 <outlet property="view" destination="BfJ-hz-mNE" id="kx5-9X-R9w"/>
+                <outletCollection property="mViewsToApplyCornerRadius" destination="jKc-6B-9r1" id="boL-Ek-E9Q"/>
+                <outletCollection property="mViewsToApplyCornerRadius" destination="5rp-Qa-aFZ" id="HQw-vj-zNj"/>
+                <outletCollection property="mViewsToApplyCornerRadius" destination="pc1-df-VJp" id="86o-WS-cSx"/>
+                <outletCollection property="mViewsToApplyCornerRadius" destination="ed4-d3-MPW" id="OGs-Nf-c93"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

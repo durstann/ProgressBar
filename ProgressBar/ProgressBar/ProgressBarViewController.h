@@ -12,6 +12,8 @@
 @property (nonatomic, retain) IBOutlet UIView* mProgressBarFillView;
 @property (nonatomic, retain) IBOutlet UIView* mProgressBarFillBackgroundView;
 
+@property (nonatomic, retain) IBOutletCollection(UIView) NSArray*mViewsToApplyCornerRadius;
+
 - (IBAction)onStartPressed:(id)sender;
 - (IBAction)onStopPressed:(id)sender;
 - (IBAction)onResetPressed:(id)sender;

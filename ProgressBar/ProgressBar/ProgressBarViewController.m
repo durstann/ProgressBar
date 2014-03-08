@@ -35,6 +35,16 @@
     return self;
 }
 
+- (void) viewDidLoad
+{
+    const float cornerRadius = 18;
+    
+    for (UIView* cornerView in self.mViewsToApplyCornerRadius)
+    {
+        cornerView.layer.cornerRadius = cornerRadius;
+    }
+}
+
 - (IBAction)onStartPressed:(id)sender
 {
     [self updateProgressBarToPercentage:0.0f];
@@ -92,7 +102,8 @@
                           delay:0.0f
                         options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear
                      animations:^{
-                            self.mProgressBarFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
+                         self.mProgressBarFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
+                         self.mProgressBarFillBackgroundView.transform = CGAffineTransformMakeTranslation(-offset, 0);
                           }
                      completion:^(BOOL completion){
                          //nothing to do here
