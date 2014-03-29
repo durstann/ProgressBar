@@ -13,23 +13,6 @@
 
 @implementation ProgressBarViewController
 
-- (void)chunkProgressBarToPercentage:(float)targetPercentage
-{
-    float offset =  self.mProgressBarFillView.frame.size.width * (1.0f - targetPercentage);
-    [self updateProgressBarToPercentage:self.currentPercentage];
-    self.mProgressBarChunkFillView.hidden = NO;
-    self.mProgressBarFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
-    [UIView animateWithDuration:0.7f
-                          delay:0.3f
-                        options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         self.mProgressBarChunkFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
-                     }
-                     completion:^(BOOL completion){
-                         //nothing to do here
-                     }];
-}
-
 - (void)updateProgressBarToPercentage:(float)targetPercentage
 {
     float offset =  self.mProgressBarFillView.frame.size.width * (1.0f - targetPercentage);
@@ -42,6 +25,23 @@
                          self.mProgressBarFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
                          self.mProgressBarChunkFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
                           }
+                     completion:^(BOOL completion){
+                         //nothing to do here
+                     }];
+}
+
+- (void)chunkProgressBarToPercentage:(float)targetPercentage
+{
+    float offset =  self.mProgressBarFillView.frame.size.width * (1.0f - targetPercentage);
+    [self updateProgressBarToPercentage:self.currentPercentage];
+    self.mProgressBarChunkFillView.hidden = NO;
+    self.mProgressBarFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
+    [UIView animateWithDuration:0.7f
+                          delay:0.3f
+                        options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.mProgressBarChunkFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
+                     }
                      completion:^(BOOL completion){
                          //nothing to do here
                      }];
