@@ -8,45 +8,109 @@
 
 /*********************************
  Implementation for the view controller that drives the progress bar example code.
+ 
+ It is important to note that when we animate the elements we use the .transform property.
+ We could manipulate the .frame property but this causes side effects that can slow down our application 
+ significantly.
+ For more information visit stonecorridors.blogspot.com
  *********************************/
 #import "ProgressBarViewController.h"
 
 @implementation ProgressBarViewController
 
+//Animate the progress bar fill to a specified percentage.
 - (void)updateProgressBarToPercentage:(float)targetPercentage
 {
-    float offset =  self.mProgressBarFillView.frame.size.width * (1.0f - targetPercentage);
-    float duration = 10.0f * fabsf(self.currentPercentage - targetPercentage);
+    //First thing we do is make sure that the passed in parameter is valid.
+    //targetPercentage needs to be no smaller than 0.0 and no larger than 1.0
+    targetPercentage = MAX(0.0f, targetPercentage);
+    targetPercentage = MIN(1.0f, targetPercentage);
+    
+    //We are not chunking so we don't want to see any part of the chunk fill view.
     self.mProgressBarChunkFillView.hidden = YES;
-    [UIView animateWithDuration:duration
-                          delay:0.0f
+    
+    //Calculate how far the bar has to move.  This is based on the width of the bar.
+    //We subtract the targetPercentage from one so that if we want to show 90% of the bar
+    //we move the bar 10% of its width to the left.
+    float offset =  self.mProgressBarFillView.frame.size.width * (1.0f - targetPercentage);
+    
+    //Now we calculate how long the bar should take to move. We want the bar to fully fill or drain
+    //in 10 seconds. So the amount of time we take is based on the difference between where we are now
+    //and where we want to be. We take the absolute value so that it doesn't matter if we are increasing
+    //or decreasing.
+    float duration = 10.0f * fabsf(self.currentPercentage - targetPercentage);
+    
+    //Now we use the UIView animation helpers to setup an animation. Everything from here on out is handled by
+    //UIKit.
+    //There are two options used here
+    //  UIViewAnimationOptionBeginFromCurrentState  - The animation run smoothly from wherever it already is
+    //  UIViewAnimationOptionCurveLinear            - The animation runs at the same speed for the duration
+    //For more information visit Apple's reference pages
+    //  http://developer.apple.com/library/ios/documentation/uikit/reference/uiview_class/uiview/uiview.html
+    [UIView animateWithDuration:duration    //Here is the duration we calculated previously
+                          delay:0.0f        //Start immediately.
                         options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear
                      animations:^{
+                         //We set the final transform here. The animateWithDuration function will move the
+                         //view from its current position to the position we have specified here.
+                         //We use the negative of the offset because we want the bar to drain to the left.
                          self.mProgressBarFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
+                         
+                         //Even though we hid it we still animate the chunk fill view so that it starts
+                         //from the correct location if this animation gets interrupted by a chunking animation
                          self.mProgressBarChunkFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
                           }
-                     completion:^(BOOL completion){
-                         //nothing to do here
-                     }];
+                     completion:nil]; //we don't have anything we want to do when the animation is finished
 }
 
+//Chunking is common in fighting games.  By leaving a shadow behind the main progress fill the user has a window
+//of time where they can see the bar's previous values and current value at the same time.
 - (void)chunkProgressBarToPercentage:(float)targetPercentage
 {
+    //First thing we do is make sure that the passed in parameter is valid.
+    //targetPercentage needs to be no smaller than 0.0 and no larger than 1.0
+    targetPercentage = MAX(0.0f, targetPercentage);
+    targetPercentage = MIN(1.0f, targetPercentage);
+    
+    
+    //Calculate how far the bar has to move.  This is based on the width of the bar.
+    //We subtract the targetPercentage from one so that if we want to show 90% of the bar
+    //we move the bar 10% of its width to the left.
     float offset =  self.mProgressBarFillView.frame.size.width * (1.0f - targetPercentage);
+    
+    //Stop any current animations. This is the same code use in the onStopPressed button handler
+    //This is slightly inefficient but means we have fewer places where we have to fix any bugs that occur.
     [self updateProgressBarToPercentage:self.currentPercentage];
+    
+    //Make sure the chunking fill is not hidden. Do it after the updateProgressBarToPercentage function call
+    //to make sure it is not hidden.
     self.mProgressBarChunkFillView.hidden = NO;
+    
+    //Immediately move the fill to the desired position.
+    //We use the negative of the offset because we want the bar to drain to the left.
     self.mProgressBarFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
-    [UIView animateWithDuration:0.7f
-                          delay:0.3f
+    
+    //Now we use the UIView animation helpers to setup an animation. Everything from here on out is handled by
+    //UIKit.
+    //There are two options used here
+    //  UIViewAnimationOptionBeginFromCurrentState  - The animation run smoothly from wherever it already is
+    //  UIViewAnimationOptionCurveLinear            - The animation runs at the same speed for the duration
+    //For more information visit Apple's reference pages
+    //  http://developer.apple.com/library/ios/documentation/uikit/reference/uiview_class/uiview/uiview.html
+    [UIView animateWithDuration:0.7f    //The whole chunk action takes a total of 1.0 second (duration + delay)
+                          delay:0.3f    //Wait for a little time before starting to move the chunk fill.
                         options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear
                      animations:^{
+                         //We set the final transform here. The animateWithDuration function will move the
+                         //view from its current position to the position we have specified here.
+                         //We use the negative of the offset because we want the bar to drain to the left.
                          self.mProgressBarChunkFillView.transform = CGAffineTransformMakeTranslation(-offset, 0);
                      }
-                     completion:^(BOOL completion){
-                         //nothing to do here
-                     }];
+                     completion:nil]; //we don't have anything we want to do when the animation is finished
 }
 
+//This is a helper function that figures out the current percentage the progress bar is at even in the middle
+//of an animation.
 - (float)currentPercentage
 {
     CALayer* presentationLayer = self.mProgressBarFillView.layer.presentationLayer;
