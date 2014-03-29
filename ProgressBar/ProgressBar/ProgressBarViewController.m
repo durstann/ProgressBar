@@ -113,10 +113,21 @@
 //of an animation.
 - (float)currentPercentage
 {
+    //This code is taking advantage of specific knowledge about how UIView animations work. The presentation layer
+    //is the actual part of the object that matches what is being displayed on the screen. Other pieces of the object
+    //may or may not have transforms that match what is being displayed on the screen depending on if there is
+    //an animation that is currently running or not.
     CALayer* presentationLayer = self.mProgressBarFillView.layer.presentationLayer;
+    
+    //We grab the transform off the presentation layer.  Note that this is not the same kind of transform
+    //as above. In this case the difference is not particularly important.
     CATransform3D presentationTransform = presentationLayer.transform;
+    
+    //This is using our knowledge of how CATransform3D object works. The m41 member represents the horizontal position.
+    //We divide by the width to get back to a percentage.
     float percentage = presentationTransform.m41 / self.mProgressBarFillView.frame.size.width;
     
+    //We have to undo some math that we do in the animation functions in order to get back to the 0.0f to 1.0f range.
     return 1.0f + percentage;
 }
 
