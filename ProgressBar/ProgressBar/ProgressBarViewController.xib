@@ -29,7 +29,7 @@
                             <rect key="frame" x="2" y="2" width="276" height="36"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <view contentMode="scaleToFill" id="pc1-df-VJp" userLabel="Progress Bar Fill Background">
+                                <view contentMode="scaleToFill" id="pc1-df-VJp" userLabel="Progress Bar Chunk Fill">
                                     <rect key="frame" x="0.0" y="0.0" width="276" height="36"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

@@ -37,11 +37,9 @@
 
 - (void) viewDidLoad
 {
-    const float cornerRadius = 18;
-    
     for (UIView* cornerView in self.mViewsToApplyCornerRadius)
     {
-        cornerView.layer.cornerRadius = cornerRadius;
+        cornerView.layer.cornerRadius = cornerView.frame.size.height * 0.5f;
     }
 }
 
