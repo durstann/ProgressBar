@@ -14,25 +14,10 @@
 		9308303A189ECB68007BAF43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93083039189ECB68007BAF43 /* main.m */; };
 		9308303E189ECB68007BAF43 /* ProgressBarAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9308303D189ECB68007BAF43 /* ProgressBarAppDelegate.m */; };
 		93083040189ECB68007BAF43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9308303F189ECB68007BAF43 /* Images.xcassets */; };
-		93083047189ECB68007BAF43 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93083046189ECB68007BAF43 /* XCTest.framework */; };
-		93083048189ECB68007BAF43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9308302D189ECB68007BAF43 /* Foundation.framework */; };
-		93083049189ECB68007BAF43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93083031189ECB68007BAF43 /* UIKit.framework */; };
-		93083051189ECB68007BAF43 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9308304F189ECB68007BAF43 /* InfoPlist.strings */; };
-		93083053189ECB68007BAF43 /* ProgressBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93083052189ECB68007BAF43 /* ProgressBarTests.m */; };
 		9308305D189ECBBE007BAF43 /* ProgressBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9308305C189ECBBD007BAF43 /* ProgressBarViewController.xib */; };
 		93083062189ECD1A007BAF43 /* ProgressBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93083061189ECD1A007BAF43 /* ProgressBarViewController.m */; };
 		93787B0E18C3BE090071F5ED /* ButtonBase.png in Resources */ = {isa = PBXBuildFile; fileRef = 93787B0D18C3BE090071F5ED /* ButtonBase.png */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9308304A189ECB68007BAF43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 93083022189ECB68007BAF43 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 93083029189ECB68007BAF43;
-			remoteInfo = ProgressBar;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9308302A189ECB68007BAF43 /* ProgressBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgressBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,11 +31,6 @@
 		9308303C189ECB68007BAF43 /* ProgressBarAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressBarAppDelegate.h; sourceTree = "<group>"; };
 		9308303D189ECB68007BAF43 /* ProgressBarAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressBarAppDelegate.m; sourceTree = "<group>"; };
 		9308303F189ECB68007BAF43 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		93083045189ECB68007BAF43 /* ProgressBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		93083046189ECB68007BAF43 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		9308304E189ECB68007BAF43 /* ProgressBarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProgressBarTests-Info.plist"; sourceTree = "<group>"; };
-		93083050189ECB68007BAF43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		93083052189ECB68007BAF43 /* ProgressBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressBarTests.m; sourceTree = "<group>"; };
 		9308305C189ECBBD007BAF43 /* ProgressBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressBarViewController.xib; sourceTree = "<group>"; };
 		9308305F189ECC06007BAF43 /* ProgressBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBarViewController.h; sourceTree = "<group>"; };
 		93083061189ECD1A007BAF43 /* ProgressBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBarViewController.m; sourceTree = "<group>"; };
@@ -68,16 +48,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		93083042189ECB68007BAF43 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93083047189ECB68007BAF43 /* XCTest.framework in Frameworks */,
-				93083049189ECB68007BAF43 /* UIKit.framework in Frameworks */,
-				93083048189ECB68007BAF43 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				93083033189ECB68007BAF43 /* ProgressBar */,
-				9308304C189ECB68007BAF43 /* ProgressBarTests */,
 				9308302C189ECB68007BAF43 /* Frameworks */,
 				9308302B189ECB68007BAF43 /* Products */,
 			);
@@ -95,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				9308302A189ECB68007BAF43 /* ProgressBar.app */,
-				93083045189ECB68007BAF43 /* ProgressBarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,7 +74,6 @@
 				9308302D189ECB68007BAF43 /* Foundation.framework */,
 				9308302F189ECB68007BAF43 /* CoreGraphics.framework */,
 				93083031189ECB68007BAF43 /* UIKit.framework */,
-				93083046189ECB68007BAF43 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,24 +104,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9308304C189ECB68007BAF43 /* ProgressBarTests */ = {
-			isa = PBXGroup;
-			children = (
-				93083052189ECB68007BAF43 /* ProgressBarTests.m */,
-				9308304D189ECB68007BAF43 /* Supporting Files */,
-			);
-			path = ProgressBarTests;
-			sourceTree = "<group>";
-		};
-		9308304D189ECB68007BAF43 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9308304E189ECB68007BAF43 /* ProgressBarTests-Info.plist */,
-				9308304F189ECB68007BAF43 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,24 +124,6 @@
 			productReference = 9308302A189ECB68007BAF43 /* ProgressBar.app */;
 			productType = "com.apple.product-type.application";
 		};
-		93083044189ECB68007BAF43 /* ProgressBarTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 93083059189ECB68007BAF43 /* Build configuration list for PBXNativeTarget "ProgressBarTests" */;
-			buildPhases = (
-				93083041189ECB68007BAF43 /* Sources */,
-				93083042189ECB68007BAF43 /* Frameworks */,
-				93083043189ECB68007BAF43 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9308304B189ECB68007BAF43 /* PBXTargetDependency */,
-			);
-			name = ProgressBarTests;
-			productName = ProgressBarTests;
-			productReference = 93083045189ECB68007BAF43 /* ProgressBarTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,11 +133,6 @@
 				CLASSPREFIX = ProgressBar;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Aaron Schneider";
-				TargetAttributes = {
-					93083044189ECB68007BAF43 = {
-						TestTargetID = 93083029189ECB68007BAF43;
-					};
-				};
 			};
 			buildConfigurationList = 93083025189ECB68007BAF43 /* Build configuration list for PBXProject "ProgressBar" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -221,7 +147,6 @@
 			projectRoot = "";
 			targets = (
 				93083029189ECB68007BAF43 /* ProgressBar */,
-				93083044189ECB68007BAF43 /* ProgressBarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -238,14 +163,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		93083043189ECB68007BAF43 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93083051189ECB68007BAF43 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -259,37 +176,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		93083041189ECB68007BAF43 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93083053189ECB68007BAF43 /* ProgressBarTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9308304B189ECB68007BAF43 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 93083029189ECB68007BAF43 /* ProgressBar */;
-			targetProxy = 9308304A189ECB68007BAF43 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		93083036189ECB68007BAF43 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				93083037189ECB68007BAF43 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		9308304F189ECB68007BAF43 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				93083050189ECB68007BAF43 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -399,48 +292,6 @@
 			};
 			name = Release;
 		};
-		9308305A189ECB68007BAF43 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProgressBar.app/ProgressBar";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ProgressBar/ProgressBar-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ProgressBarTests/ProgressBarTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		9308305B189ECB68007BAF43 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProgressBar.app/ProgressBar";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ProgressBar/ProgressBar-Prefix.pch";
-				INFOPLIST_FILE = "ProgressBarTests/ProgressBarTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -458,15 +309,6 @@
 			buildConfigurations = (
 				93083057189ECB68007BAF43 /* Debug */,
 				93083058189ECB68007BAF43 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		93083059189ECB68007BAF43 /* Build configuration list for PBXNativeTarget "ProgressBarTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9308305A189ECB68007BAF43 /* Debug */,
-				9308305B189ECB68007BAF43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
